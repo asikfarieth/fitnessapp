@@ -2,7 +2,7 @@
   <ion-page color=primary>
     <ion-tabs color="dark">
       <ion-router-outlet></ion-router-outlet>
-      <ion-tab-bar >
+      <ion-tab-bar slot="bottom">
         <ion-tab-button tab="tab1" href="/tabs/tab1">
           <ion-text style="font-family:'Font Awesome 6 Pro'; font-size:3em" class="fa-calendar-check" />
           <ion-label>Tab 1</ion-label>

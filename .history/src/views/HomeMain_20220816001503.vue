@@ -17,7 +17,7 @@
         </a-menu-item>
       </a-menu>
     </template>
-    <!-- <template #icon><SettingOutlined /></template> -->
+    <template #icon><SettingOutlined /></template>
   </a-dropdown-button>
 </template>
 

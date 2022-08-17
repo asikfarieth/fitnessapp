@@ -24,11 +24,7 @@
         </a-menu-item>
       </a-menu>
     </template>
-    <template #icon><SettingOutlined />
-    
-
-
-    </template>
+    <template #icon><SettingOutlined /></template>
   </a-dropdown-button>
         <ion-toolbar>
           <ion-title size="large">Tab 3</ion-title>
