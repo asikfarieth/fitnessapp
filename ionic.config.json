@@ -1,0 +1,8 @@
+{
+  "name": "SIM Fit",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "4544e797"
+}
