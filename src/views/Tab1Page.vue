@@ -13,25 +13,6 @@
       </ion-header>
     
       <ExploreContainer name="Tab 1 page" />
-<a-dropdown-button size="large">
-    <template #overlay>
-      <a-menu>
-        <a-menu-item key="1">
-          <UserOutlined />
-          View Profile
-        </a-menu-item>
-        <a-menu-item key="2" @click="handleUpdateProfile">
-          <UserOutlined />
-          Update Profile
-        </a-menu-item>
-        <a-menu-item key="3" @click="handleSignOut">
-          <LogoutOutlined />
-          Sign Out
-        </a-menu-item>
-      </a-menu>
-    </template>
-    <template #icon><SettingOutlined /></template>
-  </a-dropdown-button>
       <div class="chart-container" style="position: relative; height:25vh;">
         <PieChart :options="chartOptions" :chartData="testData"></PieChart>
       </div>

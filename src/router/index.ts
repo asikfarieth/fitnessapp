@@ -6,6 +6,7 @@ import HomeMain from "../views/HomeMain.vue";
 import LoginMain from "../views/LoginMain.vue";
 import RegisterMain from "../views/RegisterMain.vue";
 import UpdateProfile from "../views/UpdateProfile.vue";
+import ViewProfile from "../views/ViewProfile.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -57,6 +58,15 @@ const routes: Array<RouteRecordRaw> = [
     path: "/update-profile",
     name: "updateProfile",
     component: UpdateProfile,
+    // Only authenticated user can enter this page
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/view-profile",
+    name: "viewProfile",
+    component: ViewProfile,
     // Only authenticated user can enter this page
     meta: {
       requiresAuth: true,
