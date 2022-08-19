@@ -1,68 +1,71 @@
 <template>
-  <div class="container">
-    <!-- App Icon -->
-    <a-image
-      :width="200"
-      :height="200"
-      :src="require('../assets/dumbbell.png')"
-      :preview="false"
-    />
-    <!-- App name -->
-    <h1>SIM Fit</h1>
+  <ion-page>
+    <div class="container">
+      <!-- App Icon -->
+      <a-image
+        :width="200"
+        :height="200"
+        :src="require('../assets/dumbbell.png')"
+        :preview="false"
+      />
+      <!-- App name -->
+      <h1>SIM Fit</h1>
 
-    <a-form v-bind="layout">
-      <!-- Email Form -->
-      <a-form-item justify="center">
-        <a-input placeholder="Email Address" v-model:value="email">
-          <template #prefix>
-            <UserOutlined class="site-form-item-icon" />
-          </template>
-        </a-input>
-      </a-form-item>
+      <a-form v-bind="layout">
+        <!-- Email Form -->
+        <a-form-item justify="center">
+          <a-input placeholder="Email Address" v-model:value="email">
+            <template #prefix>
+              <UserOutlined class="site-form-item-icon" />
+            </template>
+          </a-input>
+        </a-form-item>
 
-      <!-- Password Form -->
-      <a-form-item justify="center">
-        <a-input-password
-          placeholder="Password"
-          v-model:value="password"
-          autocomplete="off"
-        >
-          <template #prefix>
-            <LockOutlined class="site-form-item-icon" />
-          </template>
-        </a-input-password>
-      </a-form-item>
+        <!-- Password Form -->
+        <a-form-item justify="center">
+          <a-input-password
+            placeholder="Password"
+            v-model:value="password"
+            autocomplete="off"
+          >
+            <template #prefix>
+              <LockOutlined class="site-form-item-icon" />
+            </template>
+          </a-input-password>
+        </a-form-item>
 
-      <!-- Login Button -->
-      <a-form-item justify="center">
-        <a-button @click="register" type="primary" block>Login</a-button>
-      </a-form-item>
+        <!-- Login Button -->
+        <a-form-item justify="center">
+          <a-button @click="register" type="primary" block>Login</a-button>
+        </a-form-item>
 
-      <!-- Form Error Message -->
-      <p style="color: red" v-if="errMsg">{{ errMsg }}</p>
+        <!-- Form Error Message -->
+        <p style="color: red" v-if="errMsg">{{ errMsg }}</p>
 
-      <!-- Route to Register Page  -->
-      <p>
-        Need an account? <router-link to="/register">Register Here</router-link>
-      </p>
+        <!-- Route to Register Page  -->
+        <p>
+          Need an account?
+          <router-link to="/register">Register Here</router-link>
+        </p>
 
-      <!-- Google Login Button -->
-      <a-form-item justify="center">
-        <a-button @click="signInWithGoogle">
-          <template #icon><GoogleOutlined /></template>
-          Login with Google
-        </a-button>
-      </a-form-item>
+        <!-- Google Login Button -->
+        <a-form-item justify="center">
+          <a-button @click="signInWithGoogle">
+            <template #icon><GoogleOutlined /></template>
+            Login with Google
+          </a-button>
+        </a-form-item>
 
-      <!-- Facebook Login Button -->
-      <a-form-item justify="center">
-        <a-button @click="signInWithFacebook">
-          <template #icon><FacebookOutlined /></template>
-          Login with Facebook
-        </a-button>
-      </a-form-item>
-    </a-form>
-  </div>
+        <!-- Facebook Login Button -->
+        <a-form-item justify="center">
+          <a-button @click="signInWithFacebook">
+            <template #icon><FacebookOutlined /></template>
+            Login with Facebook
+          </a-button>
+        </a-form-item>
+      </a-form>
+    </div>
+  </ion-page>
 </template>
 
 <script>
@@ -81,12 +84,14 @@ import {
 } from "firebase/auth";
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
+import { IonPage } from "@ionic/vue";
 export default defineComponent({
   components: {
     UserOutlined,
     LockOutlined,
     GoogleOutlined,
     FacebookOutlined,
+    IonPage,
   },
 
   setup() {

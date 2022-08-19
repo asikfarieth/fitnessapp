@@ -1,37 +1,45 @@
 <template>
-  <!-- Dropdown Button -->
-  <a-dropdown-button size="large">
-    <template #overlay>
-      <a-menu>
-        <a-menu-item key="1">
-          <UserOutlined />
-          View Profile
-        </a-menu-item>
-        <a-menu-item key="2" @click="handleUpdateProfile">
-          <UserOutlined />
-          Update Profile
-        </a-menu-item>
-        <a-menu-item key="3" @click="handleSignOut">
-          <LogoutOutlined />
-          Sign Out
-        </a-menu-item>
-      </a-menu>
-    </template>
-    <template #icon><SettingOutlined /></template>
-  </a-dropdown-button>
+  <ion-page>
+    <!-- Dropdown Button -->
+    <a-dropdown-button size="large">
+      <template #overlay>
+        <a-menu>
+          <a-menu-item key="1">
+            <UserOutlined />
+            View Profile
+          </a-menu-item>
+          <a-menu-item key="2" @click="handleUpdateProfile">
+            <UserOutlined />
+            Update Profile
+          </a-menu-item>
+          <a-menu-item key="3" @click="handleSignOut">
+            <LogoutOutlined />
+            Sign Out
+          </a-menu-item>
+        </a-menu>
+      </template>
+      <template #icon><SettingOutlined /></template>
+    </a-dropdown-button>
+  </ion-page>
 </template>
 
 <script>
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { UserOutlined, LogoutOutlined, SettingOutlined } from "@ant-design/icons-vue";
+import {
+  UserOutlined,
+  LogoutOutlined,
+  SettingOutlined,
+} from "@ant-design/icons-vue";
 import { defineComponent, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import { IonPage } from "@ionic/vue";
 
 export default defineComponent({
   components: {
     UserOutlined,
     LogoutOutlined,
     SettingOutlined,
+    IonPage,
   },
 
   setup() {
@@ -64,7 +72,7 @@ export default defineComponent({
 
     const handleUpdateProfile = () => {
       router.push("/update-profile");
-    }
+    };
 
     return {
       handleSignOut,

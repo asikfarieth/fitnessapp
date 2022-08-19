@@ -1,53 +1,57 @@
 <template>
-  <div class="container">
-    <!-- App Icon -->
-    <a-image
-      :width="200"
-      :height="200"
-      :src="require('../assets/dumbbell.png')"
-      :preview="false"
-    />
+  <ion-page>
+    <div class="container">
+      <!-- App Icon -->
+      <a-image
+        :width="200"
+        :height="200"
+        :src="require('../assets/dumbbell.png')"
+        :preview="false"
+      />
 
-    <!-- Title Name  -->
-    <h1>Create an Account</h1>
+      <!-- Title Name  -->
+      <h1>Create an Account</h1>
 
-    <a-form v-bind="layout">
-      <!-- Email Form  -->
-      <a-form-item justify="center">
-        <a-input placeholder="Email Address" v-model:value="email">
-          <template #prefix>
-            <UserOutlined class="site-form-item-icon" />
-          </template>
-        </a-input>
-        <span style="color: red" v-if="msg.email">{{ msg.email }}</span>
-      </a-form-item>
+      <a-form v-bind="layout">
+        <!-- Email Form  -->
+        <a-form-item justify="center">
+          <a-input placeholder="Email Address" v-model:value="email">
+            <template #prefix>
+              <UserOutlined class="site-form-item-icon" />
+            </template>
+          </a-input>
+          <span style="color: red" v-if="msg.email">{{ msg.email }}</span>
+        </a-form-item>
 
-      <!-- Password Form  -->
-      <a-form-item justify="center">
-        <a-input-password
-          placeholder="Password"
-          v-model:value="password"
-          autocomplete="off"
-        >
-          <template #prefix>
-            <LockOutlined class="site-form-item-icon" />
-          </template>
-        </a-input-password>
-        <span style="color: red" v-if="msg.password">{{ msg.password }}</span>
-      </a-form-item>
+        <!-- Password Form  -->
+        <a-form-item justify="center">
+          <a-input-password
+            placeholder="Password"
+            v-model:value="password"
+            autocomplete="off"
+          >
+            <template #prefix>
+              <LockOutlined class="site-form-item-icon" />
+            </template>
+          </a-input-password>
+          <span style="color: red" v-if="msg.password">{{ msg.password }}</span>
+        </a-form-item>
 
-      <!-- Sign Up Button  -->
-      <a-form-item justify="center">
-        <a-button @click="register" type="primary" block>Sign Up</a-button>
-      </a-form-item>
+        <!-- Sign Up Button  -->
+        <a-form-item justify="center">
+          <a-button @click="register" type="primary" block>Sign Up</a-button>
+        </a-form-item>
 
-      <!-- Form Error Message -->
-      <p style="color: red" v-if="errMsg">{{ errMsg }}</p>
+        <!-- Form Error Message -->
+        <p style="color: red" v-if="errMsg">{{ errMsg }}</p>
 
-      <!-- Route to Login Page  -->
-      <p>Have an account? <router-link to="/login">Login Here</router-link></p>
-    </a-form>
-  </div>
+        <!-- Route to Login Page  -->
+        <p>
+          Have an account? <router-link to="/login">Login Here</router-link>
+        </p>
+      </a-form>
+    </div>
+  </ion-page>
 </template>
 
 <script>
@@ -59,6 +63,7 @@ import {
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
+import { IonPage } from "@ionic/vue";
 export default defineComponent({
   data() {
     return {
@@ -102,9 +107,9 @@ export default defineComponent({
   },
 
   components: {
-    // GoogleOutlined,
     UserOutlined,
     LockOutlined,
+    IonPage,
   },
 
   setup() {
