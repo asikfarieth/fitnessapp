@@ -95,7 +95,7 @@ const weightInput = ref(60.0)
 //current weight
 //sort a and b, sort by date, get first object or return weight of 0 
 const currentWeight = computed(() => {
-  return { weight: 0 }
+  return weights.value.slice().sort((a, b) => b.date - a.date)[0] || { weight: 0 }
 })
 
 //adding weight with timestamp
@@ -241,6 +241,7 @@ form input[type="number"] {
 	flex: 1 1 0%;
 	padding: 1rem 1.5rem;
 	font-size: 1.25rem;
+  width: 10px;
 }
 
 form input[type="submit"] {
