@@ -2,8 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>        Weight Tracker
-</ion-title>
+        <ion-title>Weight Tracker</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
@@ -158,7 +157,7 @@ watch(weights, newWeights => {
 </script>
 
 
-<style>
+<style scoped>
 * {
 	margin: 0;
 	padding: 0;
