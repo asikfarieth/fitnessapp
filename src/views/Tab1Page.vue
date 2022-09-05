@@ -21,12 +21,9 @@
         <ion-card style="border-radius: 1.85em">
           <ion-card-header>
             <ion-row>
-              <ion-col class="ion-align-self-start"
-                ><ion-text
-                  style="font-family: 'Font Awesome 6 Pro'; font-size: 3em"
-                  class="fa-mug-hot"
-                ></ion-text
-              ></ion-col>
+              <ion-col class="ion-align-self-start">
+                <ion-icon :icon="cafeSharp"></ion-icon>
+              </ion-col>
               <ion-col class="ion-align-self-end" size="2"
                 ><ion-button style="--border-radius: 2em"
                   >+</ion-button
@@ -44,12 +41,9 @@
         <ion-card style="border-radius: 1.85em">
           <ion-card-header>
             <ion-row>
-              <ion-col class="ion-align-self-start"
-                ><ion-text
-                  style="font-family: 'Font Awesome 6 Pro'; font-size: 3em"
-                  class="fa-burger"
-                ></ion-text
-              ></ion-col>
+              <ion-col class="ion-align-self-start">
+                <ion-icon :icon="fastFoodSharp"></ion-icon>
+              </ion-col>
               <ion-col class="ion-align-self-end" size="2"
                 ><ion-button style="--border-radius: 2em"
                   >+</ion-button
@@ -67,17 +61,12 @@
         <ion-card style="border-radius: 1.85em">
           <ion-card-header>
             <ion-row>
-              <ion-col class="ion-align-self-start"
-                ><ion-text
-                  style="font-family: 'Font Awesome 6 Pro'; font-size: 3em"
-                  class="fa-bowl-food"
-                ></ion-text
-              ></ion-col>
-              <ion-col class="ion-align-self-end" size="2"
-                ><ion-button style="--border-radius: 2em"
-                  >+</ion-button
-                ></ion-col
-              >
+              <ion-col class="ion-align-self-start">
+                <ion-icon :icon="pizzaSharp"></ion-icon>
+              </ion-col>
+              <ion-col class="ion-align-self-end" size="2">
+                <ion-button style="--border-radius: 2em">+</ion-button>
+              </ion-col>
             </ion-row>
           </ion-card-header>
           <ion-card-content>
@@ -90,12 +79,9 @@
         <ion-card style="border-radius: 1.85em">
           <ion-card-header>
             <ion-row>
-              <ion-col class="ion-align-self-start"
-                ><ion-text
-                  style="font-family: 'Font Awesome 6 Pro'; font-size: 3em"
-                  class="fa-cookie-bite"
-                ></ion-text
-              ></ion-col>
+              <ion-col class="ion-align-self-start">
+                <ion-icon :icon="beerSharp"></ion-icon>
+              </ion-col>
               <ion-col class="ion-align-self-end" size="2"
                 ><ion-button style="--border-radius: 2em"
                   >+</ion-button
@@ -131,7 +117,12 @@ import {
   IonCardSubtitle,
   IonCardTitle,
 } from "@ionic/vue";
-import { pin, walk, warning, wifi, wine } from "ionicons/icons";
+import {
+  cafeSharp,
+  fastFoodSharp,
+  pizzaSharp,
+  beerSharp,
+} from "ionicons/icons";
 
 Chart.register(...registerables);
 
@@ -183,7 +174,14 @@ export default defineComponent({
       borderJoinStyle: "bevel",
     };
 
-    return { warning, pin, walk, wifi, wine, testData, chartOptions };
+    return {
+      cafeSharp,
+      fastFoodSharp,
+      pizzaSharp,
+      beerSharp,
+      testData,
+      chartOptions,
+    };
   },
 });
 </script>
