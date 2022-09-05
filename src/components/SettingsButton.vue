@@ -25,7 +25,12 @@
 
 <script>
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { UserOutlined, LogoutOutlined, SettingOutlined, FormOutlined } from "@ant-design/icons-vue";
+import {
+  UserOutlined,
+  LogoutOutlined,
+  SettingOutlined,
+  FormOutlined,
+} from "@ant-design/icons-vue";
 import { defineComponent, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -67,12 +72,12 @@ export default defineComponent({
 
     // Direct to view profile page
     const handleViewProfile = () => {
-      router.push("/view-profile");
+      router.push("/tabs/profile");
     };
 
     // Direct to update profile page
     const handleUpdateProfile = () => {
-      router.push("/update-profile");
+      router.push("/tabs/updateProfile");
     };
 
     return {

@@ -23,7 +23,11 @@
 
       <!-- Password Form -->
       <a-form-item justify="center">
-        <a-input-password placeholder="Password" v-model:value="password" autocomplete="off">
+        <a-input-password
+          placeholder="Password"
+          v-model:value="password"
+          autocomplete="off"
+        >
           <template #prefix>
             <LockOutlined class="site-form-item-icon" />
           </template>
@@ -39,11 +43,14 @@
       <p style="color: red" v-if="errMsg">{{ errMsg }}</p>
 
       <!-- Route to Register Page  -->
-      <p> Need an account? <router-link to="/register">Register Here</router-link></p>
+      <p>
+        Need an account? <router-link to="/register">Register Here</router-link>
+      </p>
 
       <!-- Google Login Button -->
       <a-form-item justify="center">
-        <a-button @click="signInWithGoogle"> <template #icon><GoogleOutlined /></template>
+        <a-button @click="signInWithGoogle">
+          <template #icon><GoogleOutlined /></template>
           Login with Google
         </a-button>
       </a-form-item>
@@ -60,8 +67,19 @@
 </template>
 
 <script>
-import { UserOutlined, LockOutlined, GoogleOutlined, FacebookOutlined } from "@ant-design/icons-vue";
-import {getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  UserOutlined,
+  LockOutlined,
+  GoogleOutlined,
+  FacebookOutlined,
+} from "@ant-design/icons-vue";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -89,7 +107,7 @@ export default defineComponent({
         .then(() => {
           console.log("Successfully signed in!");
           // Direct to main page after login
-          router.push("/");
+          router.push("/tabs/home");
         })
         .catch((error) => {
           console.log(error.code);
@@ -122,7 +140,7 @@ export default defineComponent({
         .then(() => {
           console.log("Successfully signed in!");
           // Direct to main page after login
-          router.push("/");
+          router.push("/tabs/home");
         })
         .catch((error) => {
           console.log(error.code);
@@ -143,7 +161,7 @@ export default defineComponent({
         .then(() => {
           console.log("Successfully signed in!");
           // Direct to main page after login
-          router.push("/");
+          router.push("/tabs/home");
         })
         .catch((error) => {
           console.log(error.code);

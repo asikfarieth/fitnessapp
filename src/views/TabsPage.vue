@@ -3,20 +3,25 @@
     <ion-tabs color="dark">
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar>
-        <ion-tab-button tab="tab1" href="/tabs/tab1">
-          <ion-text
-            style="font-family: 'Font Awesome 6 Pro'; font-size: 3em"
-            class="fa-calendar-check"
-          />
-          <ion-label>Tab 1</ion-label>
+        <ion-tab-button tab="home" href="/tabs/home">
+          <ion-icon :icon="homeSharp" />
+          <ion-label>Home</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="tab2" href="/tabs/tab2">
-          <ion-icon :icon="ellipse" />
-          <ion-label>Tab 2</ion-label>
+        <ion-tab-button tab="calorieTracker" href="/tabs/calorieTracker">
+          <ion-icon :icon="calculatorSharp" />
+          <ion-label>Calorie Tracker</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="tab3" href="/tabs/tab3">
-          <ion-icon :icon="square" />
-          <ion-label>Tab 3</ion-label>
+        <ion-tab-button tab="weightTracker" href="/tabs/weightTracker">
+          <ion-icon :icon="scaleSharp" />
+          <ion-label>Weight Tracker</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="mealPlanner" href="/tabs/mealPlanner">
+          <ion-icon :icon="fastFoodSharp" />
+          <ion-label>Meal Planner</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="profile" href="/tabs/profile">
+          <ion-icon :icon="personCircleSharp" />
+          <ion-label>Profile</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
@@ -34,7 +39,13 @@ import {
   IonPage,
   IonRouterOutlet,
 } from "@ionic/vue";
-import { ellipse, square, triangle } from "ionicons/icons";
+import {
+  scaleSharp,
+  calculatorSharp,
+  fastFoodSharp,
+  homeSharp,
+  personCircleSharp,
+} from "ionicons/icons";
 
 export default defineComponent({
   name: "TabsPage",
@@ -49,9 +60,11 @@ export default defineComponent({
   },
   setup() {
     return {
-      ellipse,
-      square,
-      triangle,
+      scaleSharp,
+      calculatorSharp,
+      fastFoodSharp,
+      homeSharp,
+      personCircleSharp,
     };
   },
 });

@@ -23,7 +23,7 @@ export default defineComponent({
 
     // Direct to home page
     const returnBack = () => {
-      router.push("/");
+      router.push("/tabs/home");
     };
 
     return {

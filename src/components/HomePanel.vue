@@ -6,7 +6,7 @@
         <ion-col>
           <ion-button color="secondary" class="home-btn" @click="directMP">
             <div>
-              <ion-icon :icon="fastFoodOutline"></ion-icon><br /><br />
+              <ion-icon :icon="fastFoodSharp"></ion-icon><br /><br />
               Meal Planner
             </div>
           </ion-button>
@@ -14,7 +14,7 @@
         <ion-col>
           <ion-button color="secondary" class="home-btn" @click="directCT">
             <div>
-              <ion-icon :icon="calculatorOutline"></ion-icon><br /><br />
+              <ion-icon :icon="calculatorSharp"></ion-icon><br /><br />
               Calorie Tracker
             </div>
           </ion-button>
@@ -25,16 +25,16 @@
         <ion-col>
           <ion-button color="secondary" class="home-btn" @click="directWT">
             <div>
-              <ion-icon :icon="scaleOutline"></ion-icon><br /><br />
+              <ion-icon :icon="scaleSharp"></ion-icon><br /><br />
               Weight Tracker
             </div>
           </ion-button>
         </ion-col>
         <ion-col>
-          <ion-button color="secondary" class="home-btn" @click="directET">
+          <ion-button color="secondary" class="home-btn" @click="directP">
             <div>
-              <ion-icon :icon="barbellOutline"></ion-icon><br /><br />
-              Exercise Tracker
+              <ion-icon :icon="personCircleSharp"></ion-icon><br /><br />
+              Profile
             </div>
           </ion-button>
         </ion-col>
@@ -44,7 +44,12 @@
 </template>
 
 <script>
-import { barbellOutline, fastFoodOutline, calculatorOutline, scaleOutline } from "ionicons/icons";
+import {
+  personCircleSharp,
+  fastFoodSharp,
+  calculatorSharp,
+  scaleSharp,
+} from "ionicons/icons";
 import { IonButton, IonGrid, IonRow, IonCol, IonIcon } from "@ionic/vue";
 import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
@@ -57,33 +62,39 @@ export default defineComponent({
 
     // Direct to meal planner page
     const directMP = () => {
-      router.push("/");
+      router.push("/tabs/home");
     };
 
     // Direct to calorie tracker page
     const directCT = () => {
-      router.push("/tabs/tab1");
+      router.push("/tabs/calorieTracker");
     };
 
     // Direct to weight tracker page
     const directWT = () => {
-      router.push("/tabs/tab2");
+      router.push("/tabs/weightTracker");
     };
 
-    // Direct to exercise tracker page
+    // Direct to meal planning page
     const directET = () => {
-      router.push("/tabs/tab3");
+      router.push("/tabs/mealPlanning");
+    };
+
+    // Direct to meal planning page
+    const directP = () => {
+      router.push("/tabs/profile");
     };
 
     return {
-      barbellOutline,
-      fastFoodOutline,
-      calculatorOutline,
-      scaleOutline,
+      personCircleSharp,
+      fastFoodSharp,
+      calculatorSharp,
+      scaleSharp,
       directMP,
       directCT,
       directWT,
       directET,
+      directP,
     };
   },
 });

@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
-import TabsPage from '../views/TabsPage.vue'
+import Tab1Page from "../views/Tab1Page.vue";
+import Tab2Page from "../views/Tab2Page.vue";
+import Tab3Page from "../views/Tab3Page.vue";
+import TabsPage from "../views/TabsPage.vue";
 import HomeMain from "../views/HomeMain.vue";
 import LoginMain from "../views/LoginMain.vue";
 import RegisterMain from "../views/RegisterMain.vue";
@@ -14,20 +17,28 @@ const routes: Array<RouteRecordRaw> = [
     component: TabsPage,
     children: [
       {
-        path: "",
-        redirect: "/tabs/tab1",
+        path: "home",
+        component: HomeMain,
       },
       {
-        path: "tab1",
-        component: () => import("@/views/Tab1Page.vue"),
+        path: "calorieTracker",
+        component: Tab1Page,
       },
       {
-        path: "tab2",
-        component: () => import("@/views/Tab2Page.vue"),
+        path: "weightTracker",
+        component: Tab2Page,
       },
       {
-        path: "tab3",
-        component: () => import("@/views/Tab3Page.vue"),
+        path: "mealPlanner",
+        component: Tab3Page,
+      },
+      {
+        path: "profile",
+        component: ViewProfile,
+      },
+      {
+        path: "updateProfile",
+        component: UpdateProfile,
       },
     ],
     // Only authenticated user can enter this page
@@ -54,30 +65,12 @@ const routes: Array<RouteRecordRaw> = [
       requiresAuth: true,
     },
   },
-  {
-    path: "/update-profile",
-    name: "updateProfile",
-    component: UpdateProfile,
-    // Only authenticated user can enter this page
-    meta: {
-      requiresAuth: true,
-    },
-  },
-  {
-    path: "/view-profile",
-    name: "viewProfile",
-    component: ViewProfile,
-    // Only authenticated user can enter this page
-    meta: {
-      requiresAuth: true,
-    },
-  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
 // Initialise firebase user
 const getCurrentUser = () => {
@@ -99,7 +92,7 @@ router.beforeEach(async (to, from, next) => {
     if (await getCurrentUser()) {
       next();
     } else {
-      console.log("You don't have acess!");
+      console.log("You don't have access!");
       next("/login");
     }
   } else {

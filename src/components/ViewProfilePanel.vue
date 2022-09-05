@@ -5,12 +5,18 @@
       <template #icon><UserOutlined /></template>
     </a-avatar>
     <!-- User Information -->
-    <a-descriptions title="User Profile" bordered :column="{ xxl: 1, xl: 1, lg: 1, md: 1, sm: 1, xs: 1 }">
+    <a-descriptions
+      title="User Profile"
+      bordered
+      :column="{ xxl: 1, xl: 1, lg: 1, md: 1, sm: 1, xs: 1 }"
+    >
       <a-descriptions-item label=" Full Name">{{ name }}</a-descriptions-item>
       <a-descriptions-item label="Age">{{ age }}</a-descriptions-item>
       <a-descriptions-item label="Height">{{ height }} cm</a-descriptions-item>
       <a-descriptions-item label="Weight">{{ weight }} kg</a-descriptions-item>
-      <a-descriptions-item label="Fitness Goal">{{ fitness_goals }}</a-descriptions-item>
+      <a-descriptions-item label="Fitness Goal">{{
+        fitness_goals
+      }}</a-descriptions-item>
     </a-descriptions>
     <br />
 
@@ -73,7 +79,7 @@ export default defineComponent({
 
     // Direct to update profile page
     const edit = () => {
-      router.push("/update-profile");
+      router.push("/tabs/updateProfile");
     };
 
     return {

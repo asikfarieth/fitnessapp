@@ -46,7 +46,9 @@
         <h3>Fitness Goals</h3>
         <a-radio-group v-model:value="fitness_goals">
           <a-radio-button value="Gain Weight">Gain Weight</a-radio-button>
-          <a-radio-button value="Maintain Weight">Maintain Weight</a-radio-button>
+          <a-radio-button value="Maintain Weight"
+            >Maintain Weight</a-radio-button
+          >
           <a-radio-button value="Lose Weight">Lose Weight</a-radio-button>
           <a-radio-button value="Gain Muscles">Gain Muscles</a-radio-button>
           <a-radio-button value="Manage Stress">Manage Stress</a-radio-button>
@@ -156,7 +158,7 @@ export default defineComponent({
     // Update user info to database
     async update() {
       await setDoc(doc(db, "Users", getAuth().currentUser.uid), this.$data);
-      this.$router.push("/view-profile");
+      this.$router.push("/tabs/profile");
       console.log("User info is updated to database");
     },
 

@@ -24,7 +24,11 @@
 
       <!-- Password Form  -->
       <a-form-item justify="center">
-        <a-input-password placeholder="Password" v-model:value="password" autocomplete="off">
+        <a-input-password
+          placeholder="Password"
+          v-model:value="password"
+          autocomplete="off"
+        >
           <template #prefix>
             <LockOutlined class="site-form-item-icon" />
           </template>

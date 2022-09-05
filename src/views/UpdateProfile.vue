@@ -1,6 +1,16 @@
 <template>
-  <ion-page>
-    <ion-content>
+  <ion-page
+    ><ion-header>
+      <ion-toolbar>
+        <ion-title>Edit Profile</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Edit Profile</ion-title>
+        </ion-toolbar>
+      </ion-header>
       <ReturnHomeButton />
       <UpdateProfilePanel />
     </ion-content>
